@@ -2,5 +2,6 @@
 .recommenders
 RemoteSystemsTempFiles
 bin/
+target/
 .settings/
 .classpath
