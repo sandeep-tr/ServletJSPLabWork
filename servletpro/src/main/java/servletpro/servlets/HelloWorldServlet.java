@@ -1,4 +1,4 @@
-package servletpro;
+package servletpro.servlets;
 
 import java.io.IOException;
 
