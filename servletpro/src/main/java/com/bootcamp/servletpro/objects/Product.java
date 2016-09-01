@@ -1,4 +1,4 @@
-package servletpro.objects;
+package com.bootcamp.servletpro.objects;
 
 public class Product {
 	private String name;

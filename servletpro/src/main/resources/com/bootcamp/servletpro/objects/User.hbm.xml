@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.bootcamp.servletpro.objects.User" table="users">
+		<meta attribute="class-description">
+			This class contains the user login credentials.
+		</meta>
+		<id name="userId" type="int">
+			<column name="USERID" />
+			<generator class="identity" />
+		</id>
+		<property name="userName" type="java.lang.String">
+			<column name="USERNAME" />
+		</property>
+		<property name="password" type="java.lang.String">
+			<column name="PASSWORD" />
+		</property>
+	</class>
+</hibernate-mapping>

@@ -8,7 +8,7 @@
 </head>
 <body>
 	<c:if test="${!empty data}">
-		<table>
+		<table border="1">
 			<thead>
 				<tr>
 					<c:forEach items="${productHeads}" var="theader">

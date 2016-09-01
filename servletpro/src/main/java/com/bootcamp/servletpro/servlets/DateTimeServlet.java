@@ -1,4 +1,4 @@
-package servletpro.servlets;
+package com.bootcamp.servletpro.servlets;
 
 import java.io.IOException;
 import java.time.LocalDateTime;

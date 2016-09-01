@@ -1,4 +1,4 @@
-package servletpro.servlets;
+package com.bootcamp.servletpro.servlets;
 
 import java.io.IOException;
 
@@ -9,17 +9,18 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = { "/hello" })
-public class HelloWorldServlet extends HttpServlet {
+@WebServlet(urlPatterns = { "/home" })
+public class HomeServlet extends HttpServlet {
 
-	private static final long serialVersionUID = 1732660449957728288L;
+	private static final long serialVersionUID = -6624522962807885654L;
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/helloworld.jsp");
-		// -- sets request scope variable
-		req.setAttribute("message", "Welcome, today is Monday ...");
+		System.out.println("Entering home get method.");
+
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/pages/home.jsp");
 		dispatcher.forward(req, resp);
 	}
+
 }

@@ -1,9 +1,9 @@
-package servletpro.data;
+package com.bootcamp.servletpro.data;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import servletpro.objects.Product;
+import com.bootcamp.servletpro.objects.Product;
 
 public class ProductData {
 
