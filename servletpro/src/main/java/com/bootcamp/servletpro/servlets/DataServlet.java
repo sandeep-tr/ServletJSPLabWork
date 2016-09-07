@@ -15,7 +15,7 @@ import com.bootcamp.servletpro.data.ProductData;
 import com.bootcamp.servletpro.objects.Product;
 import com.bootcamp.servletpro.utilities.ServletUtilities;
 
-@WebServlet(urlPatterns = { "/data" })
+@WebServlet(urlPatterns = { "/products" })
 public class DataServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 8872710400553056420L;
@@ -40,14 +40,32 @@ public class DataServlet extends HttpServlet {
 		int userId = -1;
 		if (temp != null) {
 			userId = Integer.parseInt(temp);
+			List<Product> products = fetchProductsBasedOnUser(userId, req);
+			req.setAttribute("data", products);
+			dispatchRequestToProductPage(req, resp);
+		} else {
+			redirectToLoginPage(resp);
 		}
+	}
 
+	private List<Product> fetchProductsBasedOnUser(int userId, HttpServletRequest req) {
+
+		String userType = (String) req.getSession().getAttribute("userType");
 		ProductData productData = new ProductData();
-		List<Product> products = productData.fetchUserProducts(userId);
+		if ("admin".equals(userType)) {
+			return productData.fetchAllProducts();
+		} else {
+			return productData.fetchUserProducts(userId);
+		}
+	}
 
-		// -- attaching product list to requestScope
-		req.setAttribute("data", products);
+	private void dispatchRequestToProductPage(HttpServletRequest req, HttpServletResponse resp)
+			throws ServletException, IOException {
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/WEB-INF/pages/products.jsp");
 		dispatcher.forward(req, resp);
+	}
+
+	private void redirectToLoginPage(HttpServletResponse resp) throws IOException {
+		resp.sendRedirect(getServletContext().getContextPath() + "/login");
 	}
 }

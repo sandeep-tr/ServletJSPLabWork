@@ -11,11 +11,14 @@
 			<column name="USERID" />
 			<generator class="identity" />
 		</id>
-		<property name="userName" type="java.lang.String">
+		<property name="userName" type="string">
 			<column name="USERNAME" />
 		</property>
-		<property name="password" type="java.lang.String">
+		<property name="password" type="string">
 			<column name="PASSWORD" />
+		</property>
+		<property name="userType" type="string">
+			<column name="USERTYPE" />
 		</property>
 	</class>
 </hibernate-mapping>

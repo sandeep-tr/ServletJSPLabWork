@@ -14,7 +14,7 @@
 	<ul>
 		<li><a href='<c:url value="/login"/>'>Login</a></li>
 		<li><a href='<c:url value="/logout"/>'>Logout</a></li>
-		<li><a href='<c:url value="/data"/>'>List Data</a></li>
+		<li><a href='<c:url value="/products"/>'>List Data</a></li>
 	</ul>
 </body>
 

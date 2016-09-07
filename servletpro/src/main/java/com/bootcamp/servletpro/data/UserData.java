@@ -13,7 +13,7 @@ public class UserData {
 
 	private static final String HQL_VALIDATE_USER = "from User user where user.userName = :userName and user.password = :password";
 
-	public int validateUser(String userName, String password) {
+	public User validateUser(String userName, String password) {
 
 		Session session = null;
 		try {
@@ -23,7 +23,7 @@ public class UserData {
 
 			List<User> users = query.list();
 			if (users.size() > 0) {
-				return users.get(0).getUserId();
+				return users.get(0);
 			}
 		} catch (HibernateException hbe) {
 			System.out.println("HibernateException in validateUser - " + hbe);
@@ -34,6 +34,6 @@ public class UserData {
 				session.close();
 			}
 		}
-		return -1;
+		return null;
 	}
 }
