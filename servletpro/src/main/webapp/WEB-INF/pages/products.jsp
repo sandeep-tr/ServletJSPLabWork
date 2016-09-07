@@ -7,6 +7,9 @@
 <title>Data</title>
 </head>
 <body>
+	<c:if test="${!empty sessionScope.userName}">
+		<p>Product list for ${userName}</p>
+	</c:if>
 	<c:if test="${!empty data}">
 		<table border="1">
 			<thead>

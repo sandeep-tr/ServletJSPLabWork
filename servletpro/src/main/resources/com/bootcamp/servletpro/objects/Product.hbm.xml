@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN"
+ "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.bootcamp.servletpro.objects.Product" table="user_products">
+		<meta attribute="class-description">
+			This class contains the products associated with
+			a user
+		</meta>
+		<id name="productId" type="int">
+			<column name="PRODUCTID" />
+			<generator class="identity" />
+		</id>
+		<property name="userId" type="int">
+			<column name="USERID" />
+		</property>
+		<property name="name" type="string">
+			<column name="NAME" />
+		</property>
+		<property name="date" type="string">
+			<column name="DATE" />
+		</property>
+		<property name="description" type="string">
+			<column name="DESCRIPTION" />
+		</property>
+		<property name="quantity" type="int">
+			<column name="QUANTITY" />
+		</property>
+		<property name="price" type="long">
+			<column name="PRICE" />
+		</property>
+	</class>
+</hibernate-mapping>

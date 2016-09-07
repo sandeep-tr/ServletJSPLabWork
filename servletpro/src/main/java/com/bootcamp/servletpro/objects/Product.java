@@ -1,11 +1,29 @@
 package com.bootcamp.servletpro.objects;
 
 public class Product {
+	private int productId;
+	private int userId;
 	private String name;
 	private String date;
 	private String description;
 	private int quantity;
 	private long price;
+
+	public int getProductId() {
+		return productId;
+	}
+
+	public void setProductId(int productId) {
+		this.productId = productId;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
 
 	public String getName() {
 		return name;
