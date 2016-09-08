@@ -7,9 +7,11 @@ public class ServletUtilities {
 
 	public static String findCookie(HttpServletRequest req, String cookieName) {
 		Cookie[] cookies = req.getCookies();
-		for (Cookie cookie : cookies) {
-			if (cookieName.equals(cookie.getName())) {
-				return cookie.getValue();
+		if (cookies != null) {
+			for (Cookie cookie : cookies) {
+				if (cookieName.equals(cookie.getName())) {
+					return cookie.getValue();
+				}
 			}
 		}
 		return null;

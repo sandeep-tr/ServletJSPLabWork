@@ -56,4 +56,22 @@ public class ProductData {
 		}
 		return Collections.emptyList();
 	}
+
+	public void saveProduct(Product product) {
+		Session session = null;
+		try {
+			session = HibernateUtilities.getSessionFactory().openSession();
+			session.beginTransaction();
+			session.save(product);
+			session.getTransaction().commit();
+		} catch (HibernateException hbe) {
+			System.out.println("HibernateException in fetchAllProducts - " + hbe);
+		} catch (Exception exe) {
+			System.out.println("Exception in fetchAllProducts - " + exe);
+		} finally {
+			if (session != null) {
+				session.close();
+			}
+		}
+	}
 }

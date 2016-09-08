@@ -18,7 +18,7 @@
 		<property name="name" type="string">
 			<column name="NAME" />
 		</property>
-		<property name="date" type="string">
+		<property name="date" type="date">
 			<column name="DATE" />
 		</property>
 		<property name="description" type="string">

@@ -1,10 +1,12 @@
 package com.bootcamp.servletpro.objects;
 
+import java.util.Date;
+
 public class Product {
 	private int productId;
 	private int userId;
 	private String name;
-	private String date;
+	private Date date;
 	private String description;
 	private int quantity;
 	private long price;
@@ -33,11 +35,11 @@ public class Product {
 		this.name = name;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return date;
 	}
 
-	public void setDate(String date) {
+	public void setDate(Date date) {
 		this.date = date;
 	}
 

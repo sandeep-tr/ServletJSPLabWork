@@ -16,7 +16,7 @@ import com.bootcamp.servletpro.objects.Product;
 import com.bootcamp.servletpro.utilities.ServletUtilities;
 
 @WebServlet(urlPatterns = { "/products" })
-public class DataServlet extends HttpServlet {
+public class ProductServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 8872710400553056420L;
 
